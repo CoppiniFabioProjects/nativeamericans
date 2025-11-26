@@ -1,0 +1,796 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2-apr-2019, 19.13.34
+    Author     : Fabio Coppini
+*/
+
+*{
+    margin:0px;
+    padding:0px;
+}
+
+@font-face {
+    font-family: native;
+    src: url(font/fonts/ZCOOLXiaoWei-Regular.ttf);
+}
+
+body{
+    background-image: url('images/sfondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/*barra di navigazione con header, immagini link(logo), menu*/
+.header{
+    height: 100px;
+    background: rgba(153, 204, 255,0.5);
+    padding: 0 20px;
+    color: orange;
+    position: relative;
+    z-index: 1000;
+}
+.logo{
+    line-height: 100px;
+    float: left;
+    text-transform: uppercase;
+}
+
+.menu{
+    float: right;
+    line-height: 100px;
+}
+.menu li{
+    display: inline-block;
+    list-style-type: none;
+}
+.menu a{
+    color: white;
+    font-family: native;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 36px;
+    transition: 0.4s;
+    text-shadow: 2px 2px 4px black;
+}
+.menu h1{
+    color: orange;
+    font-family: native;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 36px;
+    transition: 0.4s;
+    text-shadow: 2px 2px 4px black;
+}
+
+/*responsive navbar, show - 3 pallini, hide - x*/
+.show-menu-btn,.hide-menu-btn{
+    transition: 0.4s;
+    font-size: 40px;
+    cursor: pointer;
+    display: none;
+}
+.show-menu-btn{
+    float: right;
+}
+.show-menu-btn i{
+    line-height: 100px;
+}
+.menu a:hover, .show-menu-btn:hover, .hide-menu-btn:hover{
+    color: orange;
+}
+
+/*verifica responsive navbar*/
+#chk{
+    position: relative;
+    visibility: hidden;
+}
+
+@media screen and (max-width:1000px) {
+    .show-menu-btn,.hide-menu-btn{
+        display: block;
+    }
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: #333;
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 80px 0;
+        line-height: normal;
+        transition: 0.7s;
+    }
+    .menu li{
+        display: list-item;
+    }
+    .menu a{
+        display: block;
+        padding: 40px;
+        font-size: 30px;
+    }
+    .menu a::after {
+        content: '';
+        display: block;
+        margin-left: 30%;
+        width: 0;
+        height: 2px;
+        background: white;
+        transition: width 1s;
+    }
+    .menu a:hover::after {
+        width: 40%;
+    }
+    .hide-menu-btn{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #chk:checked ~ .menu{
+        right: 0;
+    }
+}
+
+/*classe testo*/
+.text{
+    width: 100%;
+    margin-top: 185px;
+    text-align: center;
+    color:white;
+}
+
+/*sottotitolo*/
+.text h4{
+    font-size: 19px;
+    font-family: native;
+    color:white;
+    text-shadow: 2px 2px 4px black;
+}
+
+/*titolo*/
+.text h1{
+    font-size:62px;
+    font-family: native;
+    text-shadow: 2px 2px 4px black;
+}
+
+@media screen and (max-width: 600px) {
+    div.text h4 {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    div.text h1 {
+        font-size: 31px;
+    }
+}
+
+/*pulsante per tornare al menu*/
+#myBtn {
+    display: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background-color:rgba(255,165,0,0.5); 
+}
+
+button{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    bottom: 20px;
+    right: 30px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    max-width: 100%;
+} 
+
+@media screen and (max-width: 600px) {
+    #myBtn{
+        padding: 7px;
+        font-size: 9px;
+    }
+}
+
+/*titoli container*/
+h2{
+    text-align: center;
+    font-size: 30px;
+    font-family: native;
+    color:whitesmoke;
+    text-shadow: 2px 2px 4px black;
+}
+
+.containerA{ 
+    margin-top: 300px; 
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 20px;
+    top: 500px;
+    font-family: native;
+    color: black;
+    background-color: rgba(153, 204, 255,0.9);
+    padding: 70px;
+    border-radius: 20px;
+    border: 1px solid white;
+    text-shadow: 2px 2px 4px white;
+}
+.containerB{
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 20px;
+    font-family: native;
+    color: black;
+    background-color:rgba(204, 91, 56,0.9);
+    padding: 70px;
+    border-radius: 20px;
+    border: 1px solid white;
+    text-shadow: 2px 2px 4px white;
+}
+.containerC{
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 20px;
+    font-family: native;
+    color: black;
+    background-color:rgba(124, 158, 100,0.9);
+    padding: 70px;
+    border-radius: 20px;
+    border: 1px solid white;
+    text-shadow: 2px 2px 4px white;
+}
+.containerL{ 
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 20px;
+    font-family: native;
+    color: black;
+    background-color:rgba(95, 105, 153,0.9);
+    padding: 70px;
+    border-radius: 20px;
+    border: 1px solid white;
+    text-shadow: 2px 2px 4px white;
+}
+.containerS{ 
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 20px;
+    font-family: native;
+    color: black;
+    background-color:rgba(210, 188, 107,0.9);
+    padding: 70px;
+    border-radius: 20px;
+    border: 1px solid white;
+    text-shadow: 2px 2px 4px white;
+}
+
+@media screen and (max-width: 600px) {
+    .containerA {
+        font-size: 15px;
+    }
+    .containerB {
+        font-size: 15px;
+    }
+    .containerC {
+        font-size: 15px;
+    }
+    .containerL {
+        font-size: 15px;
+    }
+    .containerS {
+        font-size: 15px;
+    }
+}
+
+/*Immagini -- top, right, bottom, left*/
+/*Container1*/
+.containerwickiup {
+    display: block;
+    position: relative;
+    width: 35%;
+    float: right;    
+    margin: 0 0 15px 15px;
+}
+
+.imagewickiup {
+    width: 100%;
+    height: auto;
+    border-radius: 3%;
+}
+
+.overlaywickiup {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: orange;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+    border-radius: 3%;
+}
+
+.containerwickiup:hover .overlaywickiup {
+    height: 100%;
+}
+
+.textwickiup {
+    font-family: native;
+    white-space: nowrap; 
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.containerceremony {
+    position: relative;
+    width: 35%;
+    float: left;    
+    margin: 15px 15px 0 0;
+}
+
+.imageceremony {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 3%;
+}
+
+.overlayceremony {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: orange;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+    border-radius: 3%;
+}
+
+.containerceremony:hover .overlayceremony {
+    height: 100%;
+}
+
+.textceremony {
+    font-family: native;
+    white-space: nowrap; 
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+/*Container2*/
+.containerTepee {
+    position: relative;
+    width: 20%;
+    float: right;    
+    margin: 0 0 0 15px;
+}
+
+.imageTepee {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 3%;
+}
+
+.overlayTepee {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: orange;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+    border-radius: 3%;    
+}
+
+.containerTepee:hover .overlayTepee {
+    width: 100%;
+}
+
+.textTepee {
+    white-space: nowrap; 
+    font-family: native;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.containerFoot {
+    position: relative;
+    width: 35%;
+    float: left;    
+    margin: 15px 15px 0 0;
+}
+
+.imageFoot {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 3%;
+}
+
+.overlayFoot {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: orange;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+    border-radius: 3%;    
+}
+
+.containerFoot:hover .overlayFoot {
+    width: 100%;
+}
+
+.textFoot {
+    white-space: nowrap; 
+    font-family: native;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+/*Container3*/ 
+
+.containerCheyenne {
+    position: relative;
+    width: 30%;
+    float: right;    
+    margin: 0 0 0 15px;
+}
+
+.imageCheyenne {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 3%;
+}
+
+.overlayCheyenne {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: orange;
+    overflow: hidden;
+    width: 100%;
+    height:0;
+    transition: .5s ease;
+    border-radius: 3%;
+}
+
+.containerCheyenne:hover .overlayCheyenne {
+    bottom: 0;
+    height: 100%;
+}
+
+.textCheyenne {
+    white-space: nowrap; 
+    font-family: native;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.containerMedicineCheyenne {
+    position: relative;
+    width: 30%;
+    float: left;    
+    margin: 15px 15px 0 0;
+}
+
+.imageMedicineCheyenne {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 3%;
+}
+
+.overlayMedicineCheyenne {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: orange;
+    overflow: hidden;
+    width: 100%;
+    height:0;
+    transition: .5s ease;
+    border-radius: 3%;
+}
+
+.containerMedicineCheyenne:hover .overlayMedicineCheyenne {
+    bottom: 0;
+    height: 100%;
+}
+
+.textMedicineCheyenne {
+    white-space: nowrap; 
+    font-family: native;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+/*Container4*/
+
+.containerLakota {
+    position: relative;
+    width: 35%;
+    float: right;    
+    margin: 0 0 0 15px;
+}
+
+.imageLakota {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 3%;
+}
+
+.overlayLakota {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background-color: orange;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+    border-radius: 3%;
+}
+
+.containerLakota:hover .overlayLakota {
+    width: 100%;
+    left: 0;
+}
+
+.textLakota {
+    white-space: nowrap; 
+    font-family: native;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.containerWacantognaka {
+    position: relative;
+    width: 35%;
+    float: left;    
+    margin: 15px 15px 0 0;
+}
+
+.imageWacantognaka {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 3%;
+}
+
+.overlayWacantognaka {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background-color: orange;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+    border-radius: 3%;
+}
+
+.containerWacantognaka:hover .overlayWacantognaka {
+    width: 100%;
+    left: 0;
+}
+
+.textWacantognaka {
+    white-space: nowrap; 
+    font-family: native;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+/*Container5*/
+
+.containerVillageSioux {
+    position: relative;
+    width: 35%;
+    float: right;    
+    margin: 0 0 0 15px;
+}
+
+.imageVillageSioux {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 3%;
+}
+
+.overlayVillageSioux {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: orange;
+    border-radius: 3%;
+}
+
+.containerVillageSioux:hover .overlayVillageSioux {
+    opacity: 1;
+}
+
+.textVillageSioux {
+    color: white;
+    font-family: native;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.containerSiouxPipa {
+    position: relative;
+    width: 30%;
+    float: left;    
+    margin: 15px 15px 0 0;
+}
+
+.imageSiouxPipa {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 3%;
+}
+
+.overlaySiouxPipa {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: orange;
+    border-radius: 3%;
+}
+
+.containerSiouxPipa:hover .overlaySiouxPipa {
+    opacity: 1;
+}
+
+.textSiouxPipa {
+    color: white;
+    font-family: native;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+/*responsive text dentro immagini*/
+@media screen and (max-width: 600px) {
+    .textwickiup {
+        font-size: 7px;
+        color: black;
+    }
+    .textceremony {
+        font-size: 10px;
+        color: black;
+    }
+    .textTepee {
+        font-size: 10px;
+        color: black;
+    }
+    .textFoot {
+        font-size: 9px;
+        color: black;
+    }
+    .textCheyenne {
+        font-size: 10px;
+        color: black;
+    }
+    .textMedicineCheyenne {
+        font-size: 10px;
+        color: black;
+    }
+    .textLakota {
+        font-size: 14px;
+        color: black;
+    }
+    .textWacantognaka {
+        font-size: 11px;
+        color: black;
+    }
+    .textVillageSioux {
+        font-size: 15px;
+        color: black;
+    }
+    .textSiouxPipa {
+        font-size: 15px;
+        color: black;
+    }
+}

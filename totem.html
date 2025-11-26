@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <link rel="stylesheet" href="totemCss.css"> 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+        <script src="nativeAmericansJS.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Native American site</title>
+    </head>
+    <body onload="gestoreLoadTotem()">
+        <div class="header">
+            <a href="index.html"><img src="images/logo2.png" alt="logo" style=" width:80px; height:60px; margin-top:20px;"></a>
+            <a href="costumi.html"><img src="images/logo3.png" alt="logo" style=" width:100px; height:60px; margin-top:20px; margin-left: 40px;"></a>
+            <input type="checkbox" id="chk">
+            <label for="chk" class="show-menu-btn">
+              <i class="fas fa-ellipsis-h"></i>
+            </label>
+            <ul class="menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><h1>TOTEM</h1></li>
+                <li><a href="costumi.html">COSTUMI</a></li>
+                <li><a href="musica.html">MUSICA</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><label for="chk" class="hide-menu-btn">
+                    <i class="fas fa-times"></i> 
+                    </label></li>
+            </ul>
+        </div>
+        <div class="grid">
+            <div class="divTotemsx">
+                <p> Gli animali vengono considerati dagli Indiani d'America come degli antenati mitici e secondo molte 
+                    leggende sono loro che aiutano gli umani a vivere ed è attraverso questa chiave 
+                    di lettura che possiamo capire il perchè del profondo rispetto verso la fauna del pianeta che li circondava. Gli animali 
+                    intervenivano nelle visioni degli uomini come messaggeri del Grande Spirito e da quel momento diventavano gli spiriti protettori 
+                    di quella persona infondendogli le loro doti: la forza, la saggezza ecc.</p>
+                <br>
+                <img class="totemimg" src="images/totem.png" alt="totem">
+            </div>
+            <div class="divTotemcentro">
+                <p class="totemPar">
+                    Trova il tuo animale guida!
+                </p>
+                <hr class="native">
+                <ul id="domanda"><li>dom</li></ul>
+                <hr class="native1">
+                <p class="btnContainer">
+                    <input type="button" id="btnSi" value="Si"/>
+                    <input type="button" id="btnNo" value="No"/>
+                </p>
+                <div id="loader"></div>
+                <div class="risultato">
+                    <p>
+                        Ecco l'animale totem che reincarna le tue caratteristiche: 
+                    </p>
+                    <div class="imgplusAnimaleguida">
+                        <img class="dreamcatcher" src="images/dreamcatcher.png" alt="acchiappasogni">
+                        <ul id="animaleGuida"><li>dom</li></ul>
+                        <img class="dreamcatcher" src="images/dreamcatcher.png" alt="acchiappasogni">
+                    </div>
+                </div>
+            </div>
+            <div class="divTotemdx">
+                <p> I totem servono a mostrare le effigi degli animali protettori degli avi che originarono la tribù.
+                    Per i nativi, l'associazione con il proprio totem avviene tramite l'utilizzo della pipa della pace in età adulta.
+                    Ora, in questa occasione non hai la possibilità di usufruire della potente pipa della pace.. anche perchè si tratta
+                    di una sostanza illegale.. Per cui cerca di rispondere in maniera sincera a queste numerose ma semplici domande, e
+                    scopri a quale animale avresti fatto affidamento in una vita da indiano d'America!
+                </p>
+                <br>
+                <img class="totemimg" src="images/totem1.png" alt="totem">
+            </div>
+        </div>
+    </body>
+</html>

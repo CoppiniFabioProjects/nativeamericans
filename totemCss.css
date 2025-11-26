@@ -1,0 +1,396 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29-apr-2019, 15.59.26
+    Author     : Fabio Coppini
+*/
+
+*{
+    margin:0px;
+    padding:0px;
+}
+
+@font-face {
+    font-family: native;
+    src: url(font/fonts/ZCOOLXiaoWei-Regular.ttf);
+}
+
+body{
+    background-image: url('images/sfondo3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.header{
+    height: 100px;
+    background: rgba(204, 91, 56,0.5);
+    padding: 0 20px;
+    color: orange;
+    position: relative;
+    z-index: 1000;
+}
+.logo{
+    line-height: 100px;
+    float: left;
+    text-transform: uppercase;
+}
+
+.menu{
+    float: right;
+    line-height: 100px;
+}
+.menu li{
+    display: inline-block;
+    list-style-type: none;
+}
+.menu a{
+    color: white;
+    font-family: native;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 36px;
+    transition: 0.4s;
+    text-shadow: 2px 2px 4px black;
+}
+.menu h1{
+    color: orange;
+    font-family: native;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 36px;
+    transition: 0.4s;
+    text-shadow: 2px 2px 4px black;
+}
+.show-menu-btn,.hide-menu-btn{
+    transition: 0.4s;
+    font-size: 40px;
+    cursor: pointer;
+    display: none;
+}
+.show-menu-btn{
+    float: right;
+}
+.show-menu-btn i{
+    line-height: 100px;
+}
+.menu a:hover, .show-menu-btn:hover, .hide-menu-btn:hover{
+    color: orange;
+}
+
+#chk{
+    position: absolute;
+    visibility: hidden;
+}
+
+@media screen and (max-width:1000px) {
+    .show-menu-btn,.hide-menu-btn{
+        display: block;
+    }
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #333;
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 80px 0;
+        line-height: normal;
+        transition: 0.7s;
+    }
+    .menu li{
+        display: list-item;
+    }
+    .menu a{
+        display: block;
+        padding: 40px;
+        font-size: 30px;
+    }
+    .menu a::after {
+        content: '';
+        display: block;
+        margin-left: 30%;
+        width: 0;
+        height: 2px;
+        background: white;
+        transition: width 1s;
+    }
+    .menu a:hover::after {
+        width: 40%;
+    }
+    .hide-menu-btn{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #chk:checked ~ .menu{
+        right: 0;
+    }
+}
+
+/*grid layout*/
+.grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.divTotemsx{
+    height: 400px;
+    background-color:rgba(51,51,51,0.23);
+    background-image: linear-gradient(grey, transparent);
+    margin-top: 15px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.divTotemcentro{
+    border: 1px solid white;
+    height: 400px;
+    background-color:rgba(204, 91, 56,0.5);
+    margin-top: 15px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 6px;
+}
+.divTotemdx{
+    height: 400px;
+    background-color: rgba(51,51,51,0.23);
+    background-image: linear-gradient(grey, transparent);
+    margin-top: 15px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+/*css paragrafi del grid*/
+.divTotemsx p{
+    font-family: native;
+    font-size: medium;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+.divTotemcentro p{
+    font-family: native;
+    font-size: medium;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+.divTotemdx p{
+    font-family: native;
+    font-size: medium;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+/*stile hr*/
+hr.native {
+    margin-top: 30px;
+    overflow: visible;
+    padding: 0;
+    border: none;
+    border-top: medium double white;
+    color: black;
+    text-align: center;
+}
+hr.native:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -30px;
+    color: white;
+    font-size: 44px;
+    padding: 0 4px;
+}
+
+hr.native1 {
+    margin-top: 30px;
+    overflow: visible;
+    padding: 0;
+    border: none;
+    border-top: medium double white;
+    color: black;
+    margin-left: 25%;
+    width: 50%;
+}
+hr.native1:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -30px;
+    margin-left: 46.5%;
+    color: white;
+    font-size: 44px;
+    padding: 0 4px;
+}
+
+/*domanda js*/
+#domanda{
+    font-family: native;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 2px 2px 4px black;
+    color: white;
+    list-style-type: none;
+}
+
+/*totem sx e dx*/
+.totemimg{
+    width: 45%;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+
+
+@media screen and (max-width: 1000px){
+    .grid{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .divTotemsx{
+        background-color:rgba(204, 91, 56,0.5);
+        margin-top: 15px;
+        margin-left: 15px;
+        height: auto;
+        margin-right: 15px;
+        padding: 10px 10px 10px 10px;
+        border-radius: 6px;
+    }
+    .divTotemcentro{
+        height: 400px;
+        background-color:rgba(204, 91, 56,0.5);
+        margin-top: 15px;
+        margin-left: 15px;
+        height: 450px;
+        margin-right: 15px;
+        padding: 10px 10px 10px 10px;
+        border-radius: 6px;
+    }
+    .divTotemdx{
+        background-color:rgba(204, 91, 56,0.5);
+        background-image: linear-gradient(transparent, grey);
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+        height: auto;
+        padding: 10px 10px 10px 10px;
+        border-radius: 6px;
+    }
+    .totemimg{
+       width: 10%;
+    }
+    p.vuoto{
+        display:none;
+    }
+}
+
+/*titolo centro*/
+p.totemPar{
+    font-family: native;
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 2px 2px 4px black;
+}
+
+/*css pulsanti*/
+input[type=button]{
+    padding: 15px 32px;
+    font-family: native;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: white; 
+    color: black; 
+    border: 2px solid rgba(204, 91, 56, 1);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+input[type=button]:hover {
+    background-color: rgba(204, 91, 56,0.5);
+    border: 2px solid white;
+}
+
+input[type=button]:active {
+    border: 2px solid white;
+    background-color: rgba(204, 91, 56,0.5);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transform: translateY(4px);
+}
+
+/*posizione pulsanti*/
+p.btnContainer{
+    text-align: center;
+}
+
+/*div Risultato*/
+.risultato{
+    display: none;
+}
+.risultato p{
+    text-align: center;
+    font-family: native;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px black;
+}
+.imgplusAnimaleguida{
+    height: 200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+}
+.dreamcatcher{
+    width: 100%;    
+}
+#animaleGuida{
+    font-family: native;
+    margin-left: 40px;
+    text-align: center;
+    margin-right: 40px;
+    margin-top: 40px;
+    color: white;
+    list-style-type: none;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px black;
+}
+
+/*caricamento ris*/
+#loader {
+    display: none;
+    margin: 0 auto;
+    z-index: 1;
+    width: 70px;
+    height: 70px;
+    border: 10px solid white;
+    border-radius: 50%;
+    border-top: 10px solid rgba(204, 91, 56,0.5);;
+    width: 50px;
+    height: 50px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

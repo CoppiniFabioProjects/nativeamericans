@@ -1,0 +1,445 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29-apr-2019, 15.59.26
+    Author     : Fabio Coppini
+*/
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: native;
+    src: url(font/fonts/ZCOOLXiaoWei-Regular.ttf);
+}
+
+body{
+    background-image: url('images/sfondo1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.header{
+    height: 100px;
+    background: rgba(95, 105, 153,0.5);
+    padding: 0 20px;
+    color: orange;
+    position: relative;
+    z-index: 1000;
+}
+.logo{
+    line-height: 100px;
+    float: left;
+    text-transform: uppercase;
+}
+
+.menu{
+    float: right;
+    line-height: 100px;
+}
+.menu li{
+    display: inline-block;
+    list-style-type: none;
+}
+.menu a{
+    color: white;
+    font-family: native;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 36px;
+    transition: 0.4s;
+    text-shadow: 2px 2px 4px black;
+}
+.menu h1{
+    color: orange;
+    font-family: native;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 0 36px;
+    transition: 0.4s;
+    text-shadow: 2px 2px 4px black;
+}
+.show-menu-btn,.hide-menu-btn{
+    transition: 0.4s;
+    font-size: 40px;
+    cursor: pointer;
+    display: none;
+    overflow-y:hidden;
+}
+.show-menu-btn{
+    float: right;
+}
+.show-menu-btn i{
+    line-height: 100px;
+}
+.menu a:hover, .show-menu-btn:hover, .hide-menu-btn:hover{
+    color: orange;
+}
+
+#chk{
+    position: absolute;
+    visibility: hidden;    
+}
+
+@media screen and (max-width:1000px) {
+    .show-menu-btn,.hide-menu-btn{
+        display: block;
+    }
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: #333;
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 80px 0;
+        line-height: normal;
+        transition: 0.7s;
+        overflow-y:hidden;
+    }
+    .menu li{
+        display: list-item;
+    }
+    .menu a{
+        display: block;
+        padding: 40px;
+        font-size: 30px;
+    }
+    .menu a::after {
+        content: '';
+        display: block;
+        margin-left: 30%;
+        width: 0;
+        height: 2px;
+        background: white;
+        transition: width 1s;
+    }
+    .menu a:hover::after {
+        width: 40%;
+    }
+    .hide-menu-btn{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #chk:checked ~ .menu{
+        right: 0;
+    }
+}
+
+/*div centrale di presentazione*/
+.musicatop {
+    margin: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    clear: both;
+    background-color:rgba(95, 105, 153,0.9);
+    overflow: auto;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    padding: 10px 10px 10px 10px;
+    border-color: black;
+    overflow-x:hidden; 
+    border-radius: 6px;
+}
+
+.fotosx {
+    width: 50%;
+    float: left;
+    margin-right: 30px;
+    border-radius: 6px;
+}
+
+.h1Top {
+    font: normal 3em bebas , native;
+    text-align: center;
+    color: orange;
+    font-size: 45px;
+    text-shadow: 2px 2px 4px black;
+}
+
+.hr {
+    height: 1px;
+    border-bottom: 1px solid white;
+    box-shadow: 0 20px 20px -20px white;
+}
+
+.primotesto1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    font-family: native;
+    font-size: 25px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+.primotesto {
+    margin-top: 20px;
+    width: 100%;
+    font-family: native;
+    font-size: 25px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+/*none il div rimane centrato*/
+@media screen and (max-width: 990px){
+    .fotosx{width: 100%;float: none; text-align: center;} 
+}
+
+@media screen and (max-width: 600px){
+    .primotesto{font-size: 15px;float: none;}
+    .primotesto1{font-size: 15px;float: none;}
+    .h1Top{font-size:30px;}
+}
+
+/*secondo div a una riga e tre colonne*/
+.row{
+    max-width: 100%;
+    margin-top: 10px; 
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.musicabottom {
+    background-color:rgba(95, 105, 153,0.9);
+    padding: 10px 10px 10px 10px;
+    border-radius: 6px;
+    width: 550px;
+    display: inline-block;
+}
+
+.secondotesto {
+    font-family: native;
+    font-size: 25px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+@media screen and (max-width: 600px){
+    .secondotesto{font-size: 15px;float: none;}
+    .musicabottom{width: 300px;}
+}
+
+.musicabottom1left {
+    width: 10%;
+    display: inline-block;
+}
+
+.musicabottom1right {
+    width: 10%;
+    display: inline-block;
+}
+
+.photomusicabottomleft{
+    width: 100%;
+    float: none;
+    height: auto;
+    border-radius: 6px;
+}
+
+.photomusicabottomright{
+    width: 100%;
+    height: auto;
+    float: none;
+    border-radius: 6px;
+}
+
+/*css timeline*/
+/*tutto schermo*/
+.timeline {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: rgba(95, 105, 153,0.9);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/*cerchietto*/
+.container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid orange;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/*posizionamento container a sx*/
+.left {
+    left: 0;
+}
+
+/*posizionamento container a dx*/
+.right {
+    left: 50%;
+}
+
+.left::before { 
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid #5f6999;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #5f6999;
+}
+
+.right::before { 
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid #5f6999;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #5f6999 transparent transparent;
+}
+
+.right::after {
+    left: -16px;
+}
+
+.content {
+    padding: 20px 30px;
+    background-color: rgba(95, 105, 153,0.9);
+    position: relative;
+    border-radius: 6px;
+}
+
+.content p{
+    font-family: native;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+h2{
+    text-align: center;
+    font-family: native;
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+h3{
+    font-family: native;
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+@media screen and (max-width: 600px) {
+    .timeline::after {
+        left: 31px;
+    }
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    .container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+    .left::after, .right::after {
+        left: 15px;
+    }
+    .right {
+        left: 0%;
+    }
+    .content h2{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .content h2{
+        font-size: 23px;
+    }
+}
+
+/*iframe css per visualizzare video*/
+.iframe-container{
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; 
+    height: 0;
+}
+
+.iframe-container iframe{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*pulsante per tornare al menu (z-index inutile)*/
+#myBtn {
+    display: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+  background-color:rgba(255,165,0,0.5); 
+}
+
+button{
+    margin: 0 auto;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    max-width: 100%;
+} 
+
+@media screen and (max-width: 600px) {
+    #myBtn{
+        padding: 7px;
+        font-size: 9px;
+    }
+}

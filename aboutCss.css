@@ -1,0 +1,248 @@
+/* 
+    Created on : 29-apr-2019, 15.59.26
+    Author     : Fabio Coppini
+*/
+
+*{
+    margin:0px;
+    padding:0px;
+}
+
+@font-face {
+    font-family: native;
+    src: url(font/fonts/ZCOOLXiaoWei-Regular.ttf);
+}
+
+body{
+    background-image: url('images/sfondo1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.header{
+    height: 100px;
+    background: rgba(210, 188, 107,0.9);
+    padding: 0 20px;
+    color: orange;
+    position: relative;
+    z-index: 1000;
+}
+.logo{
+    line-height: 100px;
+    float: left;
+    text-transform: uppercase;
+}
+
+.menu{
+    float: right;
+    line-height: 100px;
+}
+.menu li{
+    display: inline-block;
+    list-style-type: none;
+}
+.menu a{
+    color: white;
+    font-family: native;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 36px;
+    transition: 0.4s;
+    text-shadow: 2px 2px 4px black;
+}
+.menu h1{
+    color: orange;
+    font-family: native;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 36px;
+    transition: 0.4s;
+    text-shadow: 2px 2px 4px black;
+}
+.show-menu-btn,.hide-menu-btn{
+    transition: 0.4s;
+    font-size: 40px;
+    cursor: pointer;
+    display: none;
+}
+.show-menu-btn{
+    float: right;
+}
+.show-menu-btn i{
+    line-height: 100px;
+}
+.menu a:hover, .show-menu-btn:hover, .hide-menu-btn:hover{
+    color: orange;
+}
+
+#chk{
+    position: absolute;
+    visibility: hidden;
+}
+
+@media screen and (max-width:1000px) {
+    .show-menu-btn,.hide-menu-btn{
+        display: block;
+    }
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: #333;
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 80px 0;
+        line-height: normal;
+        transition: 0.7s;
+    }
+    .menu li{
+        display: list-item;
+    }
+    .menu a{
+        display: block;
+        padding: 40px;
+        font-size: 30px;
+    }
+    .menu a::after {
+        content: '';
+        display: block;
+        margin-left: 30%;
+        width: 0;
+        height: 2px;
+        background: white;
+        transition: width 1s;
+    }
+    .menu a:hover::after {
+        width: 40%;
+    }
+    .hide-menu-btn{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #chk:checked ~ .menu{
+        right: 0;
+    }
+}
+/*style top generalità Coppini Fabio*/
+.generalita{
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    top: 100px;
+    color: white;
+    width: 100%;
+    padding: 20px 20px 20px 0px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+}
+.generalita p{
+    font-family: native;
+    font-size: medium;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+/*style validatori*/
+.validatori{
+    margin-top: 200px;
+    margin-left:7%;
+    background-color: transparent;
+    display: list-item;
+    list-style-type: none;
+}
+.validatori p{
+    margin-bottom: 50px;
+}
+
+/*validatori per quando si resiza la pagina*/
+.valResponsive{
+    display: none;
+}
+
+/*video*/
+#myVideo {
+    display: block;
+    position: fixed;
+    width: 100%;
+    margin-left: 140px;
+    height: 95%;
+}
+
+/*immagine responsive*/
+.photoformenu img{
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+/*style fonti*/
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    padding: 20px;
+    font-family: native;
+}
+
+.content p{
+    font-size: medium;
+    text-shadow: 2px 2px 4px black;
+}
+
+.content h1{
+    font-size: large;
+    text-shadow: 2px 2px 4px black;
+}
+
+/*style link in fondo alla pagina*/
+a.class1:link {
+  color: green; 
+  background-color: transparent; 
+  text-decoration: none;
+}
+
+a.class1:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a.class1:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a.class1:active {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1140px){
+    #myVideo{display:none;}
+    body {
+        background-image: url('images/forMenu.jpg');
+        overflow-x: hidden; 
+    }
+    .validatori{
+        display: none;
+    }
+    .valResponsive{
+        display: block;
+        position: relative;
+        top: 230px;
+        left: 20%;
+    }
+}
